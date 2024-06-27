@@ -12,7 +12,7 @@ const copyBtn = document.querySelector("#copy-btn");
 let password = "";
 let passwordLength = 10;
 let checkCount = 0;
-const symbols = '~`!@#$%^&*()_-+={[}]|:;"<,>.?/';
+const symbols = '~@#%&';
 
 function Slider() {
   inputSlider.value = passwordLength;
