@@ -26,13 +26,17 @@
           >
             Copied
           </p> -->
-        <img src="images/copy.svg" class="w-9 m-2" id="copy-btn" />
+        <img
+          src="images/copy.svg"
+          class="w-9 m-2 cursor-pointer"
+          id="copy-btn"
+        />
       </div>
       <div
         class="h-[60vh] w-[370px] flex flex-col bg-teal-400 gap-5 text-xl rounded-lg p-4"
       >
         <p>Password Length <span id="lenDisplay">10</span></p>
-        <input type="range" id="passwordRange" min="0" max="20" />
+        <input type="range" id="passwordRange" class="cursor-pointer" min="0" max="20" />
         <div>
           <input type="checkbox" name="" id="uppercase" />
           Include Uppercase letters
@@ -50,7 +54,7 @@
           Include Symbols
         </div>
         <button
-          class="h-16 border-[1px] bg-yellow-300 text-gray-500 font-bold rounded-lg"
+          class="h-16 border-[1px] bg-yellow-300 text-gray-500 font-bold rounded-lg cursor-pointer"
           id="generateBtn"
         >
           Generate Password
