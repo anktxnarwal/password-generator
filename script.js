@@ -1,12 +1,14 @@
 const inputSlider = document.querySelector("#passwordRange");
 const lengthDisplay = document.querySelector("#lenDisplay");
 const displayPassword = document.getElementById("dispPassword");
-const upperCheck = document.querySelector("#uppercase"); 
+const upperCheck = document.querySelector("#uppercase");
 const lowerCheck = document.querySelector("#lowercase");
 const numberCheck = document.querySelector("#numbers");
 const symbolCheck = document.querySelector("#symbols");
 const allCheckBox = document.querySelectorAll("input[type=checkbox]");
 const generateBtn = document.querySelector("#generateBtn");
+// const copyText = document.querySelector("#copy-text");
+const copyBtn = document.querySelector("#copy-btn");
 let password = "";
 let passwordLength = 10;
 let checkCount = 0;
@@ -27,7 +29,7 @@ function randInteger(min, max) {
 }
 
 function randNumber() {
-  return randInteger(0, 10); 
+  return randInteger(0, 10);
 }
 
 function randUpperCase() {
@@ -104,4 +106,25 @@ generateBtn.addEventListener("click", () => {
 
   password = shufflePassword(Array.from(password));
   displayPassword.value = password;
+});
+
+// copy function
+async function copyPassword() {
+  try {
+    await navigator.clipboard.writeText(displayPassword.value);
+    copyText = "copied";
+  } catch (error) {
+    copyText = "Failed";
+  }
+  alert(copyText);
+  // copyText.classList.add("active");
+  // setTimeout(() => {
+  //   copyText.classList.remove("active");
+  // }, 2000);
+}
+
+copyBtn.addEventListener("click", () => {
+  if (displayPassword.value) {
+    copyPassword();
+  }
 });
